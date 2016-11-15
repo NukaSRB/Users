@@ -1,0 +1,28 @@
+{
+    "name":        "jumpgate/users",
+    "description": "Adds basic user functionality to a JumpGate site.",
+    "license":     "MIT",
+    "authors":     [
+        {
+            "name":  "Stygian",
+            "email": "stygian.warlock.v2@gmail.com"
+        },
+        {
+            "name":  "Riddles",
+            "email": "riddles@dev-toolbox.com"
+        }
+    ],
+    "require": {
+        "jumpgate/core": "^1.0"
+    },
+    "autoload":    {
+        "classmap": [
+            "src/database/migrations",
+            "src/database/seeds",
+            "src/database/social_migrations"
+        ],
+        "psr-4":    {
+            "JumpGate\\Users\\": "src/JumpGate/Users"
+        }
+    }
+}

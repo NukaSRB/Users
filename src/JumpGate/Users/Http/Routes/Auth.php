@@ -15,7 +15,7 @@ class Auth extends BaseRoutes implements Routes
 
     public function prefix()
     {
-        return $this->getContext('default') . '/broadcast';
+        return $this->getContext('default');
     }
 
     public function middleware()

@@ -13,7 +13,7 @@
         }
     ],
     "require": {
-        "jumpgate/core": "^1.0"
+        "jumpgate/core": "*@dev"
     },
     "autoload":    {
         "classmap": [
@@ -24,5 +24,11 @@
         "psr-4":    {
             "JumpGate\\Users\\": "src/JumpGate/Users"
         }
-    }
+    },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "git@github.com:NukaSRB/Core.git"
+        }
+      ]
 }

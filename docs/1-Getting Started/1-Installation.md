@@ -57,8 +57,8 @@ If you would like to use the included routes, add the following to your `app/Pro
 ```php
     $providers = [
         ...
-        \JumpGate\Users\Http\Routes\Guest::class
-        \JumpGate\Users\Http\Routes\Auth::class
+        \JumpGate\Users\Http\Routes\Guest::class,
+        \JumpGate\Users\Http\Routes\Auth::class,
     ];
 ```
 

@@ -22,10 +22,6 @@ class Social extends BaseModel
 
     public function updateFromProvider(AbstractUser $socialUser, $provider)
     {
-        $refreshToken = isset($socialUser->refreshToken) && $socialUser->refreshToken
-            ? $socialUser->refreshToken
-            : null;
-
         $attributes = [
             'user_id'       => $this->user_id,
             'provider'      => $provider,
@@ -33,9 +29,12 @@ class Social extends BaseModel
             'email'         => $socialUser->getEmail(),
             'avatar'        => $socialUser->getAvatar(),
             'token'         => $socialUser->token,
-            'refresh_token' => $refreshToken,
             'expires_in'    => $socialUser->expiresIn,
         ];
+
+        if (isset($socialUser->refreshToken) && $socialUser->refreshToken) {
+            $attributes['refresh_token'] = $socialUser->refreshToken;
+        }
 
         $this->updateOrCreate(array_only($attributes, ['user_id', 'provider', 'email']), $attributes);
     }

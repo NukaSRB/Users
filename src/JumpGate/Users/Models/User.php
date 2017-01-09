@@ -12,10 +12,11 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\Access\Authorizable;
 use Illuminate\Notifications\Notifiable;
 use JumpGate\Users\Traits\HasRoles;
+use JumpGate\Users\Traits\HasStatus;
 
 abstract class User extends BaseModel implements AuthenticatableContract, AuthorizableContract, CanResetPasswordContract
 {
-    use Authenticatable, Authorizable, CanResetPassword, HasRoles, SoftDeletes, Notifiable;
+    use Authenticatable, Authorizable, CanResetPassword, HasRoles, HasStatus, SoftDeletes, Notifiable;
 
     /**
      * Define the SQL table for this model
@@ -44,6 +45,7 @@ abstract class User extends BaseModel implements AuthenticatableContract, Author
         'timezone',
         'location',
         'url',
+        'status_id',
     ];
 
     /**

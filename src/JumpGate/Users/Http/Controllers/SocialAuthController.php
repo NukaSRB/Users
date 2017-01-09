@@ -109,6 +109,7 @@ class SocialAuthController extends BaseController
         ];
 
         $user = User::create($userDetails);
+        $user->setStatus(1);
         $user->assignRole(config('jumpgate.users.default'));
         $user->addSocial($socialUser, $this->driver);
 

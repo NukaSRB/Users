@@ -54,7 +54,7 @@ class AuthController extends BaseController
      */
     public function register()
     {
-        //
+        return $this->view();
     }
 
     /**
@@ -70,6 +70,7 @@ class AuthController extends BaseController
 
         try {
             $user = User::create($request->all());
+            $user->setStatus(1);
             $user->assignRole(config('jumpgate.users.default'));
 
             auth()->login($user);

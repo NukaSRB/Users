@@ -21,7 +21,7 @@ class CheckPermission
                 return $next($request);
             }
 
-            return $request->ajax ? response('Forbidden.', 403) : redirect(route('login'));
+            return $request->ajax ? response('Forbidden.', 403) : redirect(route('auth.login'));
         }
     }
 }
